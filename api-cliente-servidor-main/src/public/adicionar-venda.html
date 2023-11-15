@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="../controllers/vendasController.js"></script> -->
+
+
+  <title>Adicionar Venda ao Carrinho</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    h1 {
+      color: orange;
+    }
+
+    input,
+    button {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Adicionar venda ao carrinho</h1>
+  <div id="checkbox-container">
+    <script src="../controllers/vendasController.js" defer></script>
+    <script type="module">
+      (async function () {
+        await import('../controllers/vendasController.js');
+        const vendasController = new VendasController();
+        vendasController.carregarVendasECheckboxes();
+      })();
+    </script>
+  </div>
+  <button id="adicionarAoCarrinhoBtn">Adicionar vendas ao carrinho</button>
+
+  <div id="mensagem"></div>
+</body>
+
+</html>
